@@ -252,13 +252,15 @@ if uploaded_file is not None:
         """,
         unsafe_allow_html=True)
 
+        st.write("Prediction:", predicted_class)
+        st.write("Path:", references[predicted_class])
+        st.write("Exists:", os.path.exists(references[predicted_class])) 
+
         if os.path.exists(references[predicted_class]):
-            st.write("Prediction:", predicted_class)
-            st.write("Path:", references[predicted_class]) 
             st.image(
                 references[predicted_class],
                 caption=predicted_class.upper(),
-                use_container_width=True
+                use_container_width=True 
             )
         else:
             st.warning("Reference image not found.")
