@@ -150,9 +150,9 @@ references = {
     "crazing": "references/crazing_img.jpeg",
     "inclusion": "references/inclusion_img.jpeg",
     "patches": "references/patches_img.jpeg",
-    "pitted_surface": "references/Pitted_surface_img.jpeg",
+    "pitted_surface": "references/pitted_surface_img.jpeg",
     "rolled-in_scale": "references/rolled_in_scale_img.jpeg",
-    "scratches": "references/Scratch_img.jpeg"
+    "scratches": "references/scratch_img.jpeg"
 }
 
 # ---------------- Descriptions ----------------
@@ -253,6 +253,8 @@ if uploaded_file is not None:
         unsafe_allow_html=True)
 
         if os.path.exists(references[predicted_class]):
+            st.write("Prediction:", predicted_class)
+            st.write("Path:", references[predicted_class]) 
             st.image(
                 references[predicted_class],
                 caption=predicted_class.upper(),
